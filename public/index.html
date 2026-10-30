@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Dashboard - Greenhouse</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Greenhouse Dashboard</h1>
+        <div class="controls">
+            <label>Perangkat: 
+                <select id="deviceSelect">
+                    <option value="">Semua Perangkat</option>
+                </select>
+            </label>
+            <label>Ambang Suhu: 
+                <input type="number" id="thresholdInput" step="0.1" style="width: 60px;">
+                <button id="saveThreshold">Simpan</button>
+            </label>
+            <button id="exportCsv" class="btn-export">Export CSV</button>
+        </div>
+        <div id="statusIndicator" class="status-offline">Menunggu data...</div>
+    </div>
+
+    <div class="cards">
+        <div class="card" id="tempCard">
+            <h3>Suhu Terkini</h3>
+            <div class="value" id="tempValue">-- °C</div>
+            <div class="time" id="tempTime">--</div>
+        </div>
+        <div class="card" id="humCard">
+            <h3>Kelembapan Terkini</h3>
+            <div class="value" id="humValue">-- %</div>
+            <div class="time" id="humTime">--</div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="chart-container">
+            <canvas id="myChart"></canvas>
+        </div>
+        <div class="table-container">
+            <table id="historyTable">
+                <thead>
+                    <tr>
+                        <th>Waktu</th>
+                        <th>Perangkat</th>
+                        <th>Suhu (°C)</th>
+                        <th>Kelembapan (%)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
