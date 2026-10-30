@@ -1,9 +1,9 @@
 # Web Monitoring IoT (Full Stack)
 Tugas Praktikum WS Sistem Tertanam. Dibuat sesuai instruksi.
 
-**Nama Lengkap:** [NAMA MAHASISWA]
-**NIM:** [NIM MAHASISWA]
-**Kelas:** [KELAS]
+**Nama Lengkap:** Ibnu Abdillah
+**NIM:** E41241633
+**Kelas:** D
 
 ## Fitur & Nilai Plus (Semua Tantangan Bonus Selesai!):
 1. **Real-time WebSocket (Socket.io)**: Menggantikan polling konvensional dengan push data real-time, sehingga dashboard langsung update seketika.
